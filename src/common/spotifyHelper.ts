@@ -5,7 +5,7 @@ export function SpotifyToUser(
 ): IUser {
   return {
     id: user.id,
-    nome: user.display_name,
+    name: user.display_name,
     image: user.images.pop().url,
   };
 }

@@ -15,7 +15,7 @@ export class SpotifyService {
     this.spotifyApi = new Spotify();
   }
 
-  async startService() {
+  async startService(): Promise<boolean> {
     if (!!this.user) {
       return true;
     }
@@ -36,7 +36,7 @@ export class SpotifyService {
     }
   }
 
-  async getSpotifyUser() {
+  async getSpotifyUser(): Promise<void> {
     const userInfo = await this.spotifyApi.getMe();
     this.user = SpotifyToUser(userInfo);
   }
